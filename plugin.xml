@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<plugin xmlns="http://www.phonegap.com/ns/plugins/1.0"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    id="org.apache.cordova.rmcrc"
+    version="1.0.0">
+
+  <name>RomsPushPlugin</name>
+	<author>ICNS</author>
+
+	<description>
+		This plugin allows your application to use our ROMS Push Message Service
+	</description>
+
+	<license>ICNS_LAB</license>
+
+	<js-module src="www/RomsPushPlugin.js" name="roms">
+        <clobbers target="roms" />
+	</js-module>
+
+	<engines>
+		<engine name="cordova" version=">=3.0.0" />
+	</engines>
+
+	<!-- android -->
+	<platform name="android">
+
+		<config-file target="res/xml/config.xml" parent="/*">
+			<feature name="RomsPushPlugin" >
+				<param name="android-package" value="org.apache.cordova.rmcrc.RomsPushPlugin"/>
+			</feature>
+		</config-file>
+
+		<config-file target="AndroidManifest.xml" parent="/manifest">
+			<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+		</config-file>
+		
+		<source-file src="src/android/libs/ROMS.jar" target-dir="libs/" />
+		<source-file src="src/android/RomsPushPlugin.java" target-dir="src/org/apache/cordova/rmcrc" />
+		
+	</platform>
+</plugin>
+	
