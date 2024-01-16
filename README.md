@@ -1,1 +1,1 @@
-A Cross-Platform Real-time Open Messaging System (CPROMS) with Apache Cordova
+A Cross-platform Real-time Open Messaging System (ROMS) with Apache Cordova
